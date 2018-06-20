@@ -1,0 +1,30 @@
+---
+
+- name: install docker
+  apt: package={{ item }} update_cache=yes
+  with_items:
+    - docker.io
+
+- name: install transport-https
+  apt: package={{ item }} update_cache=yes
+  with_items:
+    - apt-transport-https
+
+- apt_key:
+    url: "https://packages.cloud.google.com/apt/doc/apt-key.gpg"
+    state: present
+
+- name: add kubernetes repo
+  command: touch /etc/apt/sources.list.d/kubernetes.list
+- lineinfile: dest="/etc/apt/sources.list.d/kubernetes.list" line="{{item}}"
+  with_items:
+    - "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+
+- name: install kubelet
+  apt: package=kubelet  update_cache=yes
+
+- name: install kubeadm
+  apt: package=kubeadm  update_cache=yes
+
+- name: install kubectl
+  apt: package=kubectl  update_cache=yes
