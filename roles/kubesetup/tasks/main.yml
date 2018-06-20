@@ -1,0 +1,7 @@
+---
+
+- name: install docker
+  apt: package={{ item }} update_cache=yes
+  with_items:
+    - docker.io
+
