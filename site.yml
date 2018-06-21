@@ -15,5 +15,13 @@
 - name: setup kube master
   hosts: master
   become: yes
+  #  become_user: ubuntu
   roles:
     - master
+
+- name: setup kube workers
+  hosts: workers
+  become: yes
+  #become_user: ubuntu
+  roles:
+    - workers

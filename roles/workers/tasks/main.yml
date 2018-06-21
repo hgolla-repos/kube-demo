@@ -1,0 +1,22 @@
+- name: add ubuntu user to group docker
+  command: usermod -aG docker ubuntu
+
+- name: enable docker
+  command: systemctl unmask docker.service
+  command: systemctl unmask docker.socket
+  command: systemctl enable docker.service
+  command: systemctl restart docker.service
+
+- name: Disable system swap
+  shell: "swapoff -a"
+
+- name: Remove current swaps from fstab
+  lineinfile:
+    dest: /etc/fstab
+    regexp: '(?i)^([^#][\S]+\s+(none|swap)\s+swap.*)'
+    line: '# \1'
+    backrefs: yes
+    state: present
+
+- name: kubeadm join with pre generated token
+  command: kubeadm join {{ master_ip }}:6443 --token {{ hostvars['master'].token }} --discovery-token-ca-cert-hash {{ hostvars['master'].hash }}

@@ -1,1 +1,3 @@
-kubeadm_token: hgtyf2.c61dd19a426515ec
+kubeadm_token: m5jggt.k3jgyx53otkbn887
+master_ip: 192.168.3.42
+kubeadm_hash: sha256:6a0ea7d0e1ccdf40ebfcf117d7124f78e65a07006ee600ad2973c32266e577eb

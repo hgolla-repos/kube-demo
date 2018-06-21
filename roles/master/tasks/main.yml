@@ -18,12 +18,29 @@
     backrefs: yes
     state: present
 
-- name: kubeadm init with pre generated token
-  command: kubeadm init --pod-network-cidr=10.244.0.0/16 --token {{ kubeadm_token }}
+- name: run kubeadm init
+  command: kubeadm init --pod-network-cidr=10.244.0.0/16
 
 - pause:
-    minutes: 3
+    minutes: 1
     prompt: "Make sure admin pods are started"
+
+- shell: kubeadm token create --print-join-command
+  register: results
+- debug:
+    var: results.stdout
+- set_fact:
+    token: "{{ results.stdout | regex_search(regexp, '\\2') | first }}"
+  vars:
+    regexp: '([^\s]+\s){4}([^\s]+)'
+- debug:
+    var: token
+- set_fact:
+    hash: "{{ results.stdout | regex_search(regexp, '\\2') | first }}"
+  vars:
+    regexp: '([^\s]+\s){6}([^\s]+)'
+- debug:
+    var: hash
 
 - name: allow permissive RBAC rules
   command: "kubectl --kubeconfig /etc/kubernetes/admin.conf create clusterrolebinding permissive-binding \
@@ -47,5 +64,5 @@
     - chmod 0400 ~ubuntu/.kube/config
 
 - pause:
-    minutes: 3
+    minutes: 1
     prompt: "Make sure network pods are started"
