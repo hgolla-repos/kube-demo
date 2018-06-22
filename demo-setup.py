@@ -29,9 +29,9 @@ if __name__ == '__main__':
 #    log = setup.getlogger(level=args.log_level)
 #    log.info('setup called with args [{}]'.format(' '.join(sys.argv[1:])))
     if args.run_kube:
-        print "Run Kube"
+        print "deploy Kubernetes cluster"
         setup.deploy_kube()
 
     if args.reset_kube:
-        print "Run Kube"
+        print "reset Kubernetes cluster"
         setup.reset_kube()
