@@ -2,18 +2,12 @@
 
 
 import atexit
-import collections
-import getpass
 import logging
 import os
-import readline
 import sys
-import types
-import paramiko
 
 import requests
 from requests.auth import HTTPBasicAuth
-import yaml
 
 log_levels = {
     'critical': logging.CRITICAL,

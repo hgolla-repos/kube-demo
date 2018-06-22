@@ -1,20 +1,10 @@
 #!/usr/bin/env python
 
 import argparse
-import atexit
-import collections
-import getpass
+import requests
 import logging
 import os
-import readline
-import sys
-import types
-import paramiko
-#sys.path.append('/home/hgolla/test/scripts')
 from scripts import setup
-import requests
-from requests.auth import HTTPBasicAuth
-import yaml
 
 
 requests.packages.urllib3.disable_warnings()
