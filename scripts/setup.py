@@ -30,3 +30,7 @@ def reset_kube():
     print 'Deploying kubernetes'
     d = os.path.dirname(os.getcwd())
     successful = os.system("sh " + os.getcwd() + "/scripts/kube-reset.sh " + d) == 0
+def deploy_prometheus():
+    print 'Deploying prometheus'
+    d = os.path.dirname(os.getcwd())
+    successful = os.system("sh " + os.getcwd() + "/scripts/deploy-prometheus.sh " + d) == 0

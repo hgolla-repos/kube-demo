@@ -20,6 +20,8 @@ if __name__ == '__main__':
         help='to deploy kubernetes cluster')
     run_group.add_argument('--resetkube', dest='reset_kube', action='store_true',
         help='to deploy kubernetes cluster')
+    run_group.add_argument('--prometheus', dest='run_prometheus', action='store_true',
+        help='to deploy prometheus cluster')
     args = parser.parse_args()
     if args.log_level != logging.INFO:
         ll = args.log_level.lower()
@@ -35,3 +37,7 @@ if __name__ == '__main__':
     if args.reset_kube:
         print "reset Kubernetes cluster"
         setup.reset_kube()
+
+    if args.run_prometheus:
+        print "deploy prometheus cluster"
+        setup.deploy_prometheus()
