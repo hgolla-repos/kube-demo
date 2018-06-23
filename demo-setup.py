@@ -46,4 +46,5 @@ if __name__ == '__main__':
 
     if args.run_all:
         print "deploying kubernetes and prometheus clusters"
+        setup.deploy_kube()
         setup.deploy_prometheus()
