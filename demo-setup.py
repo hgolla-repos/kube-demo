@@ -22,6 +22,8 @@ if __name__ == '__main__':
         help='to deploy kubernetes cluster')
     run_group.add_argument('--prometheus', dest='run_prometheus', action='store_true',
         help='to deploy prometheus cluster')
+    run_group.add_argument('--all', dest='run_all', action='store_true',
+        help='to deploy kubernetes and prometheus cluster')
     args = parser.parse_args()
     if args.log_level != logging.INFO:
         ll = args.log_level.lower()
@@ -31,7 +33,7 @@ if __name__ == '__main__':
 #    log = setup.getlogger(level=args.log_level)
 #    log.info('setup called with args [{}]'.format(' '.join(sys.argv[1:])))
     if args.run_kube:
-        print "deploy Kubernetes cluster"
+        print "deploying Kubernetes cluster"
         setup.deploy_kube()
 
     if args.reset_kube:
@@ -39,5 +41,9 @@ if __name__ == '__main__':
         setup.reset_kube()
 
     if args.run_prometheus:
-        print "deploy prometheus cluster"
+        print "deploying prometheus cluster"
+        setup.deploy_prometheus()
+
+    if args.run_all:
+        print "deploying kubernetes and prometheus clusters"
         setup.deploy_prometheus()
