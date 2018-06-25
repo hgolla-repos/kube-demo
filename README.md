@@ -34,3 +34,4 @@ optional arguments:
 
 ![alt text](https://github.com/hgolla-repos/kube-demo/blob/master/demo.PNG)
 
+Prometheuse dashboard can be accessed through http://workernode1:30000 or http://workernode2:30000
