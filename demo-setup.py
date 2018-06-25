@@ -19,7 +19,7 @@ if __name__ == '__main__':
     run_group.add_argument('--kube', dest='run_kube', action='store_true',
         help='to deploy kubernetes cluster')
     run_group.add_argument('--resetkube', dest='reset_kube', action='store_true',
-        help='to deploy kubernetes cluster')
+        help='to reset kubernetes cluster')
     run_group.add_argument('--prometheus', dest='run_prometheus', action='store_true',
         help='to deploy prometheus cluster')
     run_group.add_argument('--all', dest='run_all', action='store_true',

@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-kubectl create -f clusterRole.yaml
 
 NAMESPACE=${NAMESPACE:-monitoring}
 KUBECTL="kubectl --namespace=\"${NAMESPACE}\""
