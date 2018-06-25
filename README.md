@@ -18,12 +18,17 @@ usage: demo-setup.py [-h] [--log-level LOG_LEVEL]
                      [--kube | --resetkube | --prometheus | --all]
 
 optional arguments:
+
   -h, --help            show this help message and exit
-  --log-level LOG_LEVEL
-                        set the log level
+  
+  --log-level LOG_LEVEL set the log level
+  
   --kube                to deploy kubernetes cluster
-  --resetkube           to deploy kubernetes cluster
+  
+  --resetkube           to reset kubernetes cluster
+  
   --prometheus          to deploy prometheus cluster
+  
   --all                 to deploy kubernetes and prometheus cluster
 
 
