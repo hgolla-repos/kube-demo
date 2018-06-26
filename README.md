@@ -2,9 +2,13 @@
 
 Prerequisites
 Requires Ansible 1.2 or newer
+
 Expects 4 ubuntu nodes (at least 16.04)
+
 1 - Controller node from where you run automation to deploy kubernetes cluster and as well prometheus.
+
 1 - Master
+
 2 - Worker nodes (slaves)
 
 
