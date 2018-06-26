@@ -12,7 +12,7 @@ Expects 4 ubuntu nodes (at least 16.04)
 2 - Worker nodes (slaves)
 
 
-Clone the repo
+Clone the repo on Controller node
 
 And Run python demo-setup.py --all 
 
