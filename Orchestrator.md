@@ -1,6 +1,6 @@
 <h2>Infrastructure as code</h2>
 
-&nbsp; &nbsp;![alt text](https://github.com/hgolla-repos/kube-demo/blob/master/Orchestrator.png)
+&nbsp; &nbsp;![alt text](https://github.com/hgolla-repos/kube-demo/blob/master/Orchestrator1.png)
 
 
 <h2>Orchestrator/Configurator</h2>
