@@ -1,7 +1,1 @@
 Initial commit
-My commit
-<<<<<<< HEAD
-commited on github.com
-=======
-Adding commit from cmd
->>>>>>> adff930 (Adding)
