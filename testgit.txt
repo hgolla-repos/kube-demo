@@ -1,7 +1,2 @@
 Initial commit
 My commit
-<<<<<<< HEAD
-Test
-=======
-Test-new
->>>>>>> origin
